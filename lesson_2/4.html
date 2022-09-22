@@ -32,8 +32,39 @@
 -->
     <script>
         "use strict";
+        let a = Number(prompt('Введите первое число:'));
+        let b = Number(prompt('Введите второе число:'));
 
-  // Здесь пишем решение, данный комментарий необходимо стереть.
+        function addition(a, b) {
+            return a + b;
+        }
+        function multiplication(a, b) {
+            return a * b;
+        }
+        function division(a, b) {
+            if (a >= b && b != 0) {
+                return a / b;
+            } else if (a != 0) { return b / a }
+            else if (a == 0) {
+                return error_div
+            }
+
+        }
+        function difference(a, b) {
+            if (a >= b) {
+                return a - b;
+            }
+            else { return b - a }
+        }
+        function error_div() {
+            console.log("Делить на ноль нельзя");
+        }
+
+        console.log(addition(a, b))
+        console.log(multiplication(a, b))
+        console.log(division(a, b))
+        console.log(difference(a, b))
+
     </script>
 </body>
 
