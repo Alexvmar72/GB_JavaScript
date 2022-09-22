@@ -33,8 +33,55 @@ Infinity делать не нужно, однако, в случае если б
 -->
     <script>
         "use strict";
+        let a = Number(prompt('Введите первое число:'));
+        let b = Number(prompt('Введите второе число:'));
+        let operation = prompt('Введите знак математической операции:');
 
-  // Здесь пишем решение, данный комментарий необходимо стереть.
+        function mathOperation(a, b, operation) {
+            if (operation == '+') {
+                console.log(addition(a, b));
+            }
+            else if (operation == '*') {
+                console.log(multiplication(a, b));
+            }
+            else if (operation == '/') {
+                console.log(division(a, b));
+            }
+            else if (operation == '-') {
+                console.log(difference(a, b));
+            }
+            else if (operation != '-' || operation != '+' || operation != '/' || operation != '*') {
+                console.log(error_sign)
+            }
+            function addition(a, b) {
+                return a + b;
+            }
+            function multiplication(a, b) {
+                return a * b;
+            }
+            function division(a, b) {
+                if (a >= b && b != 0) {
+                    return a / b;
+                } else if (a < b && a != 0) {
+                    return b / a
+                } else if (a == 0 || b == 0) {
+                    return error_div
+                }
+            }
+            function difference(a, b) {
+                if (a >= b) {
+                    return a - b;
+                }
+                else { return b - a }
+            }
+            function error_div() {
+                console.log("Делить на ноль нельзя");
+            }
+            function error_sign() {
+                return NaN
+
+            }
+        }
     </script>
 </body>
 
