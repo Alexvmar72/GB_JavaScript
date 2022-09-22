@@ -45,10 +45,9 @@
             if (a >= b && b != 0) {
                 return a / b;
             } else if (a != 0) { return b / a }
-            else if (a == 0) {
+            else if (a == 0 || b == 0) {
                 return error_div
             }
-
         }
         function difference(a, b) {
             if (a >= b) {
@@ -60,10 +59,10 @@
             console.log("Делить на ноль нельзя");
         }
 
-        console.log(addition(a, b))
-        console.log(multiplication(a, b))
-        console.log(division(a, b))
-        console.log(difference(a, b))
+        console.log(addition(a, b));
+        console.log(multiplication(a, b));
+        console.log(division(a, b));
+        console.log(difference(a, b));
 
     </script>
 </body>
