@@ -7,22 +7,54 @@
 </head>
 
 <body>
-    <!--
-Обязательное задание.
-
-Необходимо данное задание выполнить в es5 стиле и в es6 стиле.
-Необходимо создать функцию-конструктор/класс для продукта.
-Названия: `ProductES5` для es5 стиля, `ProductES6` для es6 стиля.
-При создании объекта от функции-конструктора/класса необходимо передавать имя
-и цену товара, эта информация должна быть сохранена в объекте.
-Также у объекта должна быть возможность выполнить метод `make25Discount`, данный
-метод должен уменьшать стоимость продукта на 25%.
-Необходимо продемонстрировать работу с объектом (в свободной форме).
--->
     <script>
         "use strict";
+        // Стиль es5
+        function ProductES5(name, price) {
+            this.name = name;
+            this.price = price;
+        }
 
-  // Здесь пишем решение, данный комментарий необходимо стереть.
+        ProductES5.prototype.make25Discount = function (discount) {
+            alert("Со скидкой в 25% цена товара " + this.name + " " + this.price
+                * (100 - discount) / 100);
+        };
+
+        const products = [
+            new ProductES5("Диск стальной", 2000),
+            new ProductES5("Диск литой", 3000),
+            new ProductES5("Диск сцепления", 1500)
+        ];
+
+        console.log(products[0]);
+        console.log(products[1]);
+        products[1].make25Discount(25);
+        console.log(products[2]);
+
+        // Стиль es6
+        class ProductES6 {
+            constructor(name, price) {
+                this.name = name;
+                this.price = price;
+            }
+
+            make25Discount(discount) {
+                alert("Со скидкой в 25% цена товара " + this.name + " " + this.price
+                    * (100 - discount) / 100);
+            }
+        }
+
+        const products6 = [
+            new ProductES6("Патрубок", 500),
+            new ProductES6("Фильтр", 1100),
+            new ProductES6("Пружина", 800)
+        ];
+
+        console.log(products6[0]);
+        console.log(products6[1]);
+        products6[1].make25Discount(25);
+        console.log(products6[2]);
+
     </script>
 </body>
 
