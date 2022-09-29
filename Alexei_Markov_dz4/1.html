@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Homework</title>
+</head>
+
+<body>
+    <script>
+        "use strict";
+        // Стиль es5
+        function ProductES5(name, price) {
+            this.name = name;
+            this.price = price;
+        }
+
+        ProductES5.prototype.make25Discount = function (discount) {
+            alert("Со скидкой в 25% цена товара " + this.name + " " + this.price
+                * (100 - discount) / 100);
+        };
+
+        const products = [
+            new ProductES5("Диск стальной", 2000),
+            new ProductES5("Диск литой", 3000),
+            new ProductES5("Диск сцепления", 1500)
+        ];
+
+        console.log(products[0]);
+        console.log(products[1]);
+        products[1].make25Discount(25);
+        console.log(products[2]);
+
+        // Стиль es6
+        class ProductES6 {
+            constructor(name, price) {
+                this.name = name;
+                this.price = price;
+            }
+
+            make25Discount(discount) {
+                alert("Со скидкой в 25% цена товара " + this.name + " " + this.price
+                    * (100 - discount) / 100);
+            }
+        }
+
+        const products6 = [
+            new ProductES6("Патрубок", 500),
+            new ProductES6("Фильтр", 1100),
+            new ProductES6("Пружина", 800)
+        ];
+
+        console.log(products6[0]);
+        console.log(products6[1]);
+        products6[1].make25Discount(25);
+        console.log(products6[2]);
+
+    </script>
+</body>
+
+</html>
